@@ -32,6 +32,23 @@ function useCountUp(target, inView) {
 }
 
 export default function Milestones() {
+  const ref1 = React.useRef(null);
+  const ref2 = React.useRef(null);
+  const ref3 = React.useRef(null);
+  const ref4 = React.useRef(null);
+  const ref5 = React.useRef(null);
+  const refs = [ref1, ref2, ref3, ref4, ref5];
+  const inView1 = useInView(ref1, { once: true, margin: "-50px" });
+  const inView2 = useInView(ref2, { once: true, margin: "-50px" });
+  const inView3 = useInView(ref3, { once: true, margin: "-50px" });
+  const inView4 = useInView(ref4, { once: true, margin: "-50px" });
+  const inView5 = useInView(ref5, { once: true, margin: "-50px" });
+  const count1 = useCountUp(milestones[0].number, inView1);
+  const count2 = useCountUp(milestones[1].number, inView2);
+  const count3 = useCountUp(milestones[2].number, inView3);
+  const count4 = useCountUp(milestones[3].number, inView4);
+  const count5 = useCountUp(milestones[4].number, inView5);
+  const counts = [count1, count2, count3, count4, count5];
   return (
     <section className="relative bg-white text-slate-900 py-24 overflow-hidden border-b border-slate-100 font-sans">
       
@@ -80,8 +97,8 @@ export default function Milestones() {
               {["M", "I", "L", "E", "S", "T", "O", "N", "E", "S"].map((letter, i) => (
                 <motion.span
                   key={`mile-${i}`}
-                  initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.04 }}
                   className="inline-block bg-[radial-gradient(circle,_#2563eb_0%,_#1e3a8a_40%,_#0b1f5e_100%)] bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(37,99,235,0.3)]"
@@ -102,22 +119,17 @@ export default function Milestones() {
 
         {/* Milestone Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-          {milestones.map((item, index) => {
-            const ref = React.useRef(null);
-            const inView = useInView(ref, { once: true, margin: "-50px" });
-            const count = useCountUp(item.number, inView);
-
-            return (
-              <motion.div
-                key={index}
-                ref={ref}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -15 }}
-                className="group relative h-full p-[2px] rounded-[40px] overflow-visible"
-              >
+          {milestones.map((item, index) => (
+            <motion.div
+              key={index}
+              ref={refs[index]}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -15 }}
+              className="group relative h-full p-[2px] rounded-[40px] overflow-visible"
+            >
                 <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-[#0070f3] via-[#ffffff] to-[#004aad] opacity-0 group-hover:opacity-100 blur-[15px] transition-all duration-700 -z-10" />
                 <div className="absolute inset-0 rounded-[40px] bg-gradient-to-tr from-[#004aad] via-[#00c6ff] to-white opacity-10 group-hover:opacity-100 transition-all duration-500" />
 
@@ -132,7 +144,7 @@ export default function Milestones() {
                   </div>
 
                   <h3 className="text-4xl font-black italic tracking-tighter mb-2 bg-gradient-to-b from-slate-900 to-slate-500 bg-clip-text text-transparent group-hover:from-[#004aad] group-hover:to-[#0070f3] transition-all duration-300">
-                    {count.toLocaleString()}{item.suffix}
+                    {counts[index].toLocaleString()}{item.suffix}
                   </h3>
 
                   <p className="text-[10px] font-black uppercase tracking-widest leading-relaxed text-slate-400 group-hover:text-slate-700 transition-colors duration-300 mt-auto">
@@ -142,8 +154,7 @@ export default function Milestones() {
                   <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#004aad]/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </motion.div>
-            )
-          })}
+            ))}
         </div>
       </div>
     </section>

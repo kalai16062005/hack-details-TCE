@@ -3,17 +3,17 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 // 1. IMAGES IMPORT
-import judge1Img from "../assets/hod3.png";
+import judge1Img from "../assets/hod1.jpeg";
 import judge2Img from "../assets/j2.png";
-import judge3Img from "../assets/illam_khan3.png";
+import judge3Img from "../assets/j3.png";
 
 export default function Judges() {
   const judges = [
     {
-      name: "Dr. A. Meenakshi, M.E., Ph.D.,",
+      name: "Dr.C.Deisy, M.E., Ph.D.,",
       role: "Professor & Head",
-      company: "KCET",
-      expertise: "Big Data analytics, Machine learning, Data warehousing and Data mining",
+      company: "TCE",
+      expertise: "Reviewer in Computers and Electronics in Agriculture, Elsevier",
       image: judge1Img 
     },
     {
@@ -24,10 +24,10 @@ export default function Judges() {
       image: judge2Img
     },
     {
-      name: "Mr. Mohammed Ilham Khan",
-      role: "Chief Architect",
+      name: "Mr. Mohamed Faizal",
+      role: "Executive",
       company: "Tarcin",
-      expertise: "Data Science, Networking, DevOps",
+      expertise: "Business management, digital marketing",
       image: judge3Img
     }
   ];
@@ -67,7 +67,7 @@ export default function Judges() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.03 }}
+                  transition={{ delay: i * 0.04 }}
                   className="inline-block text-slate-900"
                 >
                   {letter}
@@ -80,10 +80,10 @@ export default function Judges() {
               {["J", "U", "D", "G", "E", "S"].map((letter, i) => (
                 <motion.span
                   key={`judge-${i}`}
-                  initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.3 + i * 0.04 }}
+                  transition={{ delay: 0.2 + i * 0.04 }}
                   className="inline-block bg-[radial-gradient(circle,_#2563eb_0%,_#1e3a8a_40%,_#0b1f5e_100%)] bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(37,99,235,0.3)]"
                 >
                   {letter}

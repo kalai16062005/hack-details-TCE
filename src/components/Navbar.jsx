@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import collegeLogo from "../assets/logoc2 - Copy.png";
+import collegeLogo from "../assets/TCE.png";
 import logotarcin from "../assets/Logo_Tarcin.png";
 import tarcinlogo1 from "../assets/logo2.png";
 

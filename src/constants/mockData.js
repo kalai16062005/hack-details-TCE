@@ -2,11 +2,11 @@ import React from "react";
 import { Trophy, Crown, Star } from "lucide-react";
 
 export const hackathonData = {
-  title: "K-HACK 2026",
+  title: "CODEASTHRAM CHALLENGE",
   tagline: "Build Real-World Solutions through Innovation and Teamwork",
-  eventDate: "2026-01-26T09:00:00", // Countdown kaga
-  location: "KCET Campus",
-  stats: { submissions: "442", days: "10", teams: "19", winners: "3" }
+  eventDate: "JAN 2025", // Countdown kaga
+  location: "TCE Campus",
+  stats: { problemstatement: "100's", days: "20", teams: "60+", winners: "3" }
 };
 
 export const eliteSquadsData = {

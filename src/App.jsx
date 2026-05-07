@@ -6,7 +6,7 @@ import Teams from "./components/Teams";
 import Departments from "./components/Departments";
 import Footer from "./components/Footer";
 import Timeline from "./components/Timeline";
-import Milestones from "./components/Milestones"; 
+// import Milestones from "./components/Milestones"; 
 import EvaluationCriteria from "./components/EvaluationCriteria"; 
 import Judges from "./components/Judges"; 
 import VideoGallery from "./components/VideoGallery"; 
@@ -77,9 +77,9 @@ function App() {
             <Departments />
           </section>
 
-          <section id="milestones">
+          {/* <section id="milestones">
             <Milestones />
-          </section>
+          </section> */}
         </main>
 
         <Footer />

@@ -4,11 +4,11 @@ import { Monitor, Code2, GraduationCap, Users, Star } from "lucide-react";
 
 const DepartmentFocus = () => {
   const cseStats = {
-    name: "Computer Science and Engineering",
-    shortName: "CSE",
-    totalPoints: "14,073",
-    tasksCompleted: "457",
-    activeTeams: "19",
+    name: "Information Technology",
+    shortName: "IT",
+    totalPoints: "1570",
+    tasksCompleted: "60",
+    activeTeams: "60+",
     participation: "100%"
   };
 
@@ -37,7 +37,7 @@ const DepartmentFocus = () => {
             </h2>
           </div>
 
-          <div className="text-5xl md:text-6xl font-black tracking-tighter uppercase leading-none flex flex-wrap items-baseline gap-x-4">
+          <div className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none flex flex-wrap items-baseline gap-x-4">
             {/* TOP (Black) */}
             <div className="flex">
               {["T", "O", "P"].map((letter, i) => (
@@ -46,7 +46,7 @@ const DepartmentFocus = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
+                  transition={{ delay: i * 0.04 }}
                   className="inline-block text-slate-900"
                 >
                   {letter}
@@ -59,10 +59,10 @@ const DepartmentFocus = () => {
               {["P", "E", "R", "F", "O", "R", "M", "E", "R", "S"].map((letter, i) => (
                 <motion.span
                   key={`perf-${i}`}
-                  initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.15 + i * 0.04 }}
+                  transition={{ delay: 0.2 + i * 0.04 }}
                   className="inline-block bg-[radial-gradient(circle,_#2563eb_0%,_#1e3a8a_40%,_#0b1f5e_100%)] bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(37,99,235,0.3)]"
                 >
                   {letter}
@@ -146,14 +146,14 @@ const DepartmentFocus = () => {
                 Departmental <span className="bg-gradient-to-r from-[#004aad] to-[#3b82f6] bg-clip-text text-transparent">Strength</span>
               </h3>
               <p className="text-slate-500 mt-4 leading-relaxed font-medium text-base">
-                The Computer Science department led the 2K25 challenge with maximum participation, demonstrating top-tier skills in modern web technologies and problem-solving.
+                The Information Technology departmentled the 2K25 challenge with maximum participation, demonstrating top-tier skills in modern web technologies and problem-solving.
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { icon: <Users size={18} />, label: "Active Teams", val: cseStats.activeTeams },
-                { icon: <GraduationCap size={18} />, label: "Campus", val: "Kamaraj College" },
+                { icon: <GraduationCap size={18} />, label: "Campus", val: "TCE, Madurai" },
               ].map((item, i) => (
                 <motion.div 
                   key={i} 

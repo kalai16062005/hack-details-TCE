@@ -45,7 +45,7 @@ export default function HackathonTimeline() {
         }}
       />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* HEADER */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-6">

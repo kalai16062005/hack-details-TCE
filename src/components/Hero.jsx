@@ -10,14 +10,7 @@ import {
 } from "lucide-react";
 
 import trophy from "../assets/trophy1.png";
-
-const localHackathonData = {
-  title: "TECH CHALLENGE 2025",
-  tagline: "Build Real-World Solutions through Innovation and Teamwork",
-  eventDate: "2025-09-26T09:00:00",
-  location: "KCET Campus",
-  stats: { submissions: "457", days: "10", teams: "19", winners: "3" }
-};
+import { hackathonData } from "../constants/mockData.js";
 
 const CountUp = ({ end, duration = 2 }) => {
   const [count, setCount] = useState(0);
@@ -44,7 +37,7 @@ const CountUp = ({ end, duration = 2 }) => {
 };
 
 export default function Home() {
-  const { stats, tagline, location } = localHackathonData;
+  const { stats, tagline, location, eventDate } = hackathonData;
 
   const letterAnimation = {
     initial: { y: 80, opacity: 0 },
@@ -61,8 +54,6 @@ export default function Home() {
 
   return (
     <section id="home" className="min-h-screen bg-[#F8FAFC] text-slate-900 flex flex-col items-center justify-center relative overflow-hidden font-sans">
-      
-     
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -97,25 +88,27 @@ export default function Home() {
         {/* --- ANIMATED HEADING START --- */}
         <div className="flex flex-col items-center leading-none">
 
-          {/* TECH */}
-          <div className="flex overflow-hidden pb-1">
-            {"Tech".split("").map((char, i) => (
+          {/* INDUSTRY INNOVATION */}
+          <div className="flex flex-wrap justify-center overflow-hidden pb-1">
+            {"CODEASTHRAM".split("").map((char, i) => (
               <motion.span
                 key={`tech-${i}`}
                 custom={i}
                 variants={letterAnimation}
                 initial="initial"
                 animate="animate"
-                className="text-6xl md:text-9xl font-extrabold tracking-tighter text-slate-900 uppercase inline-block"
+                className={`text-6xl md:text-9xl font-extrabold tracking-tighter text-slate-900 uppercase inline-block ${
+                  char === " " ? "w-3 md:w-6" : ""
+                }`}
               >
-                {char}
+                {char === " " ? "\u00A0" : char}
               </motion.span>
             ))}
           </div>
 
-          {/* CHALLENGE 2K25 → RADIAL DARK BLUE */}
+          {/* HACKATHON 2026 */}
           <div className="flex flex-wrap justify-center overflow-hidden">
-            {"Challenge 2K25".split("").map((char, i) => (
+            {"CHALLENGE".split("").map((char, i) => (
               <motion.span
                 key={`chall-${i}`}
                 custom={i + 4}
@@ -142,7 +135,7 @@ export default function Home() {
         {/* Info Bar */}
         <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-slate-600 text-[12px] font-semibold tracking-wider bg-white py-4 px-10 rounded-2xl border border-slate-200 shadow-md">
           <span className="flex items-center gap-2 uppercase">
-            <CalendarDays size={16} className="text-blue-500" /> 26 SEP 2025
+            <CalendarDays size={16} className="text-blue-500" /> {eventDate}
           </span>
           <div className="hidden md:block w-px h-4 bg-slate-200" />
           <span className="flex items-center gap-2 text-slate-800 uppercase">
@@ -153,9 +146,9 @@ export default function Home() {
 
       {/* --- STAT CARDS --- */}
       <div className="absolute inset-0 pointer-events-none">
-        <StatCard position="left-[6%] top-[25%]" delay={0.2} icon={<Zap size={28} className="text-blue-500" />} label="Total Submissions" value={stats.submissions} isCount />
+        <StatCard position="left-[6%] top-[25%]" delay={0.2} icon={<Zap size={28} className="text-blue-500" />} label="Problem Statements" value={stats.problemstatement} />
         <StatCard position="left-[6%] bottom-[12%]" delay={0.4} icon={<Calendar size={28} className="text-blue-500" />} label="Days Hackathon" value={stats.days} />
-        <StatCard position="right-[6%] top-[25%]" delay={0.6} icon={<Users size={28} className="text-blue-500" />} label="Teams Joined" value={stats.teams} isCount />
+        <StatCard position="right-[6%] top-[25%]" delay={0.6} icon={<Users size={28} className="text-blue-500" />} label="Teams Joined" value={stats.teams} />
         <StatCard position="right-[6%] bottom-[12%]" delay={0.8} icon={<Trophy size={28} className="text-blue-500" />} label="Final Winners" value={stats.winners} />
       </div>
     </section>

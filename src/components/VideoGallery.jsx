@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, X, Clapperboard } from "lucide-react"; 
-import logo from "../assets/tect2.png";
+import logo from "../assets/tech3.png";
 
 export default function VideoGallery() {
   const videos = [
@@ -10,16 +10,16 @@ export default function VideoGallery() {
       title: "Inaugural Ceremony",
       category: "Grand Opening",
       description: "Official commencement of Tech Challenge 2025 featuring keynote speakers.",
-      thumbnail: "/gallery/img1.jpeg",
-      src: "/videos/video12.mp4"
+      thumbnail: "/gallery/3.jpeg",
+      src: "/videos/video31.mp4"
     },
     { 
       id: 2,
       title: "The Grand Finale",
       category: "Awards & Closing",
       description: "Recognizing excellence and celebrating the innovative spirit of participants.",
-      thumbnail: "/gallery/1.jpeg",
-      src: "/videos/video21.mp4"
+      thumbnail: "/gallery/2.png",
+      src: "/videos/TCE.mp4"
     }
   ];
 
@@ -76,8 +76,8 @@ export default function VideoGallery() {
               {["H", "i", "g", "h", "l", "i", "g", "h", "t", "s"].map((letter, i) => (
                 <motion.span
                   key={`highlights-${i}`}
-                  initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.04 }}
                   className="inline-block mx-[1px] 
